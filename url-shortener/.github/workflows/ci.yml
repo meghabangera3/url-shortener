@@ -16,12 +16,13 @@ jobs:
       uses: actions/setup-go@v5
       with:
         go-version: '1.23'
+        cache: false
 
     - name: Build
       run: go build -v ./...
       working-directory: ./url-shortener
 
-    - name: Test
+    - name: Vet
       run: go vet ./...
       working-directory: ./url-shortener
 
